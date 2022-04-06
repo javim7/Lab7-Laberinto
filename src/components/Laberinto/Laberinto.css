@@ -1,0 +1,41 @@
+* {
+    grid: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Laberinto { 
+    position: relative;
+    top: 50px;
+    left: 32%;
+    width: 700px;
+    height: 700px;
+}
+
+.gridFila {
+    display: flex;
+}
+
+.pared { 
+    width: 60px;
+    height: 60px;
+    background: green;
+}
+
+.piso {
+    width: 60px;
+    height: 60px;
+    background: orange;
+}
+
+.jugador {
+    width: 60px;
+    height: 60px;
+    background: black;
+}
+
+.fin { 
+    width: 60px;
+    height: 60px;
+    background: white;
+}

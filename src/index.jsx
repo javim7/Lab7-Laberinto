@@ -1,12 +1,16 @@
 import React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import Laberinto from './components/Laberinto/Laberinto.jsx'
-import './styles.css'
+import Controlador from './components/Controlador/Controlador.jsx'
+import './index.css'
 
 const App = () => {
     return (
         <>
-            <Laberinto title="Hello from React!" />
+            <h1>Lab7: Laberinto</h1>
+            <h2>Javier Mombiela</h2>
+            <Controlador />
+            <Laberinto />
         </>
     )
 }
