@@ -7,7 +7,7 @@ const Inicio = () => {
     let navigate = useNavigate();
 
     const [opciones, setOpciones] = useState({
-        objects: [{ id: 0, size: 4 }, { id: 1, size: 5 }, { id: 2, size: 6 }, { id: 3, size: 7 }]
+        objects: [{ id: 0, size: 4, src: './7.png' }, { id: 1, size: 5, src: './7.png' }, { id: 2, size: 6, src: './7.png' }, { id: 3, size: 7, src: './7.png' }]
     });
     const [tamanoLab, setTamanoLab] = useState(0);
 
@@ -30,7 +30,7 @@ const Inicio = () => {
                     return (
                         <div key={opciones.objects[index].id}>
                             <h1>{opciones.objects[index].size}x{opciones.objects[index].size}</h1>
-                            <div onClick={() => { handleClick(opciones.objects[index].size) }} id="opcionCuadro"></div>
+                            <img onClick={() => { navigate(`/laberinto/${opciones.objects[index].size}x${opciones.objects[index].size}`) }} src={opciones.objects[index].src} id="opcionCuadro" />
                         </div>
                     )
                 })}

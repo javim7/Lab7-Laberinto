@@ -1,34 +1,33 @@
-* {
-    grid: flex;
-    align-items: center;
+.Laberinto { 
+    display: block;
+}
+
+.gridFila {
+    width: 100%;
+    display: flex;
     justify-content: center;
 }
 
-
-.gridFila {
-    display: flex;
-}
-
 .pared { 
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 40px;
     background: #161a1d;
 }
 
 .piso {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 40px;
     background: #d3d3d3;
 }
 
 .jugador {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 40px;
     background: #e5383b;
 }
 
 .fin { 
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 40px;
     background: white;
 }

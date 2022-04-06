@@ -6,11 +6,18 @@ const Laberinto = ({ title }) => {
 
     let navigate = useNavigate();
     let { size } = useParams();
-    const tamano = size[0]
 
     const [laberinto, setLaberinto] = useState([]);
+    const [tamano, setTamano] = useState(size[0]);
+
     let jugador = document.querySelector('.jugador');
     let movimiento = 50;
+
+    // useEffect(() => {
+    //     console.log(size[0]);
+    //     setTamano(size[0]);
+    //     console.log(tamano)
+    // }, [])
 
     useEffect(() => {
         fetch(`https://maze.juanelcaballo.club/?type=json&w=${tamano}&h=${tamano}`)
@@ -21,6 +28,7 @@ const Laberinto = ({ title }) => {
                 setLaberinto(response2)
             })
     }, [])
+
 
     useEffect(() => {
         window.addEventListener("load", () => {
