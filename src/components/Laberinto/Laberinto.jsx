@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Laberinto.css'
 
 const Laberinto = ({ title }) => {
 
+    let navigate = useNavigate();
+    let { size } = useParams();
+
     const [tamano, setTamano] = useState(4);
     const [laberinto, setLaberinto] = useState([]);
+    let jugador = document.getElementsByClassName('jugador');
+    let movimiento = 50;
 
     useEffect(() => {
         fetch(`https://maze.juanelcaballo.club/?type=json&w=${tamano}&h=${tamano}`)
@@ -15,6 +21,26 @@ const Laberinto = ({ title }) => {
                 setLaberinto(response2)
             })
     }, [])
+
+    useEffect(() => {
+        window.addEventListener('keydown', (e) => {
+            switch (e.key) {
+                case 'ArrowLeft':
+                    console.log('izquierda')
+                    jugador.style.left = parseInt(jugador.style.left) - movimiento + 'px';
+                    break;
+                case 'ArrowRight':
+                    jugador.style.left = parseInt(jugador.style.left) + movimiento + 'px';
+                    break;
+                case 'ArrowUp':
+                    jugador.style.top = parseInt(jugador.style.top) - movimiento + 'px';
+                    break;
+                case 'ArrowDown':
+                    jugador.style.top = parseInt(jugador.style.top) + movimiento + 'px';
+                    break;
+            }
+        })
+    }, [jugador])
 
     return (
         <div className="Laberinto">

@@ -4,13 +4,6 @@
     justify-content: center;
 }
 
-.Laberinto { 
-    position: relative;
-    top: 50px;
-    left: 32%;
-    width: 700px;
-    height: 700px;
-}
 
 .gridFila {
     display: flex;
@@ -19,19 +12,19 @@
 .pared { 
     width: 60px;
     height: 60px;
-    background: green;
+    background: #161a1d;
 }
 
 .piso {
     width: 60px;
     height: 60px;
-    background: orange;
+    background: #d3d3d3;
 }
 
 .jugador {
     width: 60px;
     height: 60px;
-    background: black;
+    background: #660708;
 }
 
 .fin { 

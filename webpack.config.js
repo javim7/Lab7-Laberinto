@@ -6,6 +6,7 @@ export default {
         filename: 'bundle.js',
     },
     devServer: {
+        historyApiFallback: true,
         static: {
             directory: 'dist',
         },
