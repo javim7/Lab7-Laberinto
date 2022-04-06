@@ -6,15 +6,12 @@ import Inicio from './components/Inicio/Inicio.jsx'
 import './index.css'
 
 const App = () => {
-
-    console.log('Inicio', Inicio);
-    console.log('Laberinto', Laberinto)
     return (
         <Router>
             <div className="container">
                 <Routes>
                     <Route path="/" element={<Inicio />} />
-                    <Route path='/laberinto' element={<Laberinto />} />
+                    <Route path='/laberinto/:size' element={<Laberinto />} />
                 </Routes>
             </div>
         </Router>

@@ -6,10 +6,10 @@ const Laberinto = ({ title }) => {
 
     let navigate = useNavigate();
     let { size } = useParams();
+    const tamano = size[0]
 
-    const [tamano, setTamano] = useState(4);
     const [laberinto, setLaberinto] = useState([]);
-    let jugador = document.getElementsByClassName('jugador');
+    let jugador = document.querySelector('.jugador');
     let movimiento = 50;
 
     useEffect(() => {
@@ -17,13 +17,21 @@ const Laberinto = ({ title }) => {
             .then((response) => {
                 return response.json()
             }).then(response2 => {
-                console.log(response2)
+                // console.log(response2)
                 setLaberinto(response2)
             })
     }, [])
 
     useEffect(() => {
-        window.addEventListener('keydown', (e) => {
+        window.addEventListener("load", () => {
+            jugador.style.position = "absolute";
+            jugador.style.left = 0;
+            jugador.style.top = 0;
+        })
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener('keyup', (e) => {
             switch (e.key) {
                 case 'ArrowLeft':
                     console.log('izquierda')
