@@ -8,16 +8,16 @@ const Laberinto = ({ title }) => {
     let { size } = useParams();
 
     const [laberinto, setLaberinto] = useState([]);
-    const [tamano, setTamano] = useState(size[0]);
+    const [tamano, setTamano] = useState(0);
 
     let jugador = document.querySelector('.jugador');
     let movimiento = 50;
 
-    // useEffect(() => {
-    //     console.log(size[0]);
-    //     setTamano(size[0]);
-    //     console.log(tamano)
-    // }, [])
+    useEffect(() => {
+        console.log(size[0]);
+        setTamano(size[0]);
+        console.log(tamano)
+    }, [])
 
     useEffect(() => {
         fetch(`https://maze.juanelcaballo.club/?type=json&w=${tamano}&h=${tamano}`)
@@ -27,7 +27,7 @@ const Laberinto = ({ title }) => {
                 // console.log(response2)
                 setLaberinto(response2)
             })
-    }, [])
+    }, [tamano])
 
 
     useEffect(() => {
@@ -60,35 +60,38 @@ const Laberinto = ({ title }) => {
 
     return (
         <div className="Laberinto">
-            {laberinto.map(fila => {
-                return (
-                    <div className="gridFila">
-                        {
-                            fila.map(caracter => {
-                                if (caracter == '-') {
-                                    return <div key={Math.random()} className="pared"></div>
-                                }
-                                else if (caracter == '|') {
-                                    return <div key={Math.random()} className="pared"></div>
-                                }
-                                else if (caracter == '+') {
-                                    return <div key={Math.random()} className="pared"></div>
-                                }
-                                else if (caracter == ' ') {
-                                    return <div key={Math.random()} className="piso"></div>
-                                }
-                                else if (caracter == 'p') {
-                                    return <div key={Math.random()} className="jugador"></div>
-                                }
-                                else if (caracter == 'g') {
-                                    return <div key={Math.random()} className="fin"></div>
-                                }
-                            })
-                        }
-                    </div>
-                )
+            <h1 className="titulo">LABERINTO</h1>
+            <div className="board">
+                {laberinto.map(fila => {
+                    return (
+                        <div className="gridFila">
+                            {
+                                fila.map(caracter => {
+                                    if (caracter == '-') {
+                                        return <div key={Math.random()} className="pared"></div>
+                                    }
+                                    else if (caracter == '|') {
+                                        return <div key={Math.random()} className="pared"></div>
+                                    }
+                                    else if (caracter == '+') {
+                                        return <div key={Math.random()} className="pared"></div>
+                                    }
+                                    else if (caracter == ' ') {
+                                        return <div key={Math.random()} className="piso"></div>
+                                    }
+                                    else if (caracter == 'p') {
+                                        return <div key={Math.random()} className="jugador"></div>
+                                    }
+                                    else if (caracter == 'g') {
+                                        return <div key={Math.random()} className="fin"></div>
+                                    }
+                                })
+                            }
+                        </div>
+                    )
 
-            })}
+                })}
+            </div>
         </div>
     )
 }
