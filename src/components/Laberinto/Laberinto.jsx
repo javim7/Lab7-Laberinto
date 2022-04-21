@@ -9,14 +9,20 @@ const Laberinto = ({ title }) => {
 
     const [laberinto, setLaberinto] = useState([]);
     const [tamano, setTamano] = useState(0);
+    const [jugadorPos, setjugadorPos] = useState();
+    const [jugadorPosX, setjugadorPosX] = useState(0);
+    const [jugadorPosY, setjugadorPosY] = useState(0);
 
-    let jugador = document.querySelector('.jugador');
-    let movimiento = 50;
+    let movimientoHor = 30;
+    let movimientoVer = 40;
+
+    const style = {
+        left: `${jugadorPosX}`,
+        top: `${jugadorPosY}`
+    }
 
     useEffect(() => {
-        console.log(size[0]);
         setTamano(size[0]);
-        console.log(tamano)
     }, [])
 
     useEffect(() => {
@@ -29,38 +35,28 @@ const Laberinto = ({ title }) => {
             })
     }, [tamano])
 
-
     useEffect(() => {
-        window.addEventListener("load", () => {
-            jugador.style.position = "absolute";
-            jugador.style.left = 0;
-            jugador.style.top = 0;
-        })
+
+        const lab2 = laberinto
+        for (let i = 0; i < lab2.length; i++) {
+
+            for (let j = 0; j < lab2[i].length; j++) {
+
+                console.log(lab2[i][j]);
+            }
+        }
+
     }, [])
 
     useEffect(() => {
-        window.addEventListener('keyup', (e) => {
-            switch (e.key) {
-                case 'ArrowLeft':
-                    console.log('izquierda')
-                    jugador.style.left = parseInt(jugador.style.left) - movimiento + 'px';
-                    break;
-                case 'ArrowRight':
-                    jugador.style.left = parseInt(jugador.style.left) + movimiento + 'px';
-                    break;
-                case 'ArrowUp':
-                    jugador.style.top = parseInt(jugador.style.top) - movimiento + 'px';
-                    break;
-                case 'ArrowDown':
-                    jugador.style.top = parseInt(jugador.style.top) + movimiento + 'px';
-                    break;
-            }
-        })
-    }, [jugador])
+
+    })
+
 
     return (
         <div className="Laberinto">
             <h1 className="titulo">LABERINTO</h1>
+            <h2 className="tamLab">{size}</h2>
             <div className="board">
                 {laberinto.map(fila => {
                     return (
@@ -80,7 +76,7 @@ const Laberinto = ({ title }) => {
                                         return <div key={Math.random()} className="piso"></div>
                                     }
                                     else if (caracter == 'p') {
-                                        return <div key={Math.random()} className="jugador"></div>
+                                        return <div style={style} key={Math.random()} onKeyDown={handleKeyDown} tabIndex='0' className="jugador"></div>
                                     }
                                     else if (caracter == 'g') {
                                         return <div key={Math.random()} className="fin"></div>

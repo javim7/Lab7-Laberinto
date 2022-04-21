@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Laberinto from './components/Laberinto/Laberinto.jsx'
 import Inicio from './components/Inicio/Inicio.jsx'
+import { Howl, Howler } from 'howler'
+// import music from "./music.mp3"
 import './index.css'
+
+// const audioClip = [
+//     { sound: music, label: "music" }
+// ]
 
 const App = () => {
     return (
