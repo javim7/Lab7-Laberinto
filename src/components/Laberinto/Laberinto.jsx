@@ -90,7 +90,7 @@ const Laberinto = ({ title }) => {
                 case "ArrowLeft":
                     // console.log("izquierda")
                     movimiento = [jugadorPos[0], jugadorPos[1] - distancia]
-                    console.log(movimiento)
+                    // console.log(movimiento)
                     break;
                 case "ArrowRight":
                     movimiento = [jugadorPos[0], jugadorPos[1] + distancia]
@@ -106,7 +106,6 @@ const Laberinto = ({ title }) => {
             const lab2 = [];
             let sePuede = false;
 
-            console.log(laberinto[movimiento[0]][movimiento[1]])
             if (laberinto[movimiento[0]][movimiento[1]] == ' ') {
 
                 sePuede = true;

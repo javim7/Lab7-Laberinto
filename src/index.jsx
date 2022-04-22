@@ -4,14 +4,22 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Laberinto from './components/Laberinto/Laberinto.jsx'
 import Inicio from './components/Inicio/Inicio.jsx'
 import { Howl, Howler } from 'howler'
-// import music from "./music.mp3"
+import music from "./music.mp3"
 import './index.css'
 
-// const audioClip = [
-//     { sound: music, label: "music" }
-// ]
+const audioClip = [
+    { sound: music, label: "music" }
+]
 
 const App = () => {
+
+    const SoundPlay = (src) => {
+        const sound = new Howl({
+            src
+        })
+        sound.play();
+    }
+
     return (
         <Router>
             <div className="container">

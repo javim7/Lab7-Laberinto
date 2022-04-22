@@ -30,6 +30,10 @@ export default {
             use: [
                 'file-loader'
             ]
+        },
+        {
+            test: /\.mp3$/,
+            use: 'file-loader',
         }]
     },
 };
