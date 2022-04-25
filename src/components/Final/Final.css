@@ -1,0 +1,35 @@
+.Final {
+    position: relative;
+    width: 600px;
+    height: 80%;
+    padding: 50px;
+    /* align-items: center;
+    justify-content: center; */
+    top: -300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    /* text-align: center; */
+    border-radius: 15px;
+    /* border: 1px solid #ffba08; */
+    text-align: center;
+}
+
+.ganar{
+    color: black;
+    background: none;
+}
+
+.btnG {
+    border-radius: 5px;
+    color: black;
+    background: white;
+    cursor: pointer;
+    padding: 10px;
+    border: 4px #e5383b solid;
+}
+
+.btnG:hover {
+    background: #e5383b;
+    border: 4px black solid;
+}

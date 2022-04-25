@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './Laberinto.css'
+import Final from '../Final/Final.jsx'
 
 const Laberinto = ({ title }) => {
 
@@ -12,6 +13,7 @@ const Laberinto = ({ title }) => {
     const [jugadorPos, setJugadorPos] = useState([1, 1]);
     const [tecla, setTecla] = useState('');
     const [movidas, setMovidas] = useState(0);
+    const [modal_final, setmodal_final] = useState(false);
 
     useEffect(() => {
         setTamano(size[0]);
@@ -54,19 +56,23 @@ const Laberinto = ({ title }) => {
 
         document.addEventListener("keydown", (event) => {
             switch (event.key) {
+                case "a":
                 case "ArrowLeft":
                     // console.log("izquierda")
                     setTecla("ArrowLeft");
                     setMovidas(prev => prev + 1)
                     break;
+                case "d":
                 case "ArrowRight":
                     setTecla("ArrowRight");
                     setMovidas(prev => prev + 1)
                     break;
+                case "s":
                 case "ArrowDown":
                     setTecla("ArrowDown");
                     setMovidas(prev => prev + 1)
                     break;
+                case "w":
                 case "ArrowUp":
                     setTecla("ArrowUp");
                     setMovidas(prev => prev + 1)
@@ -107,6 +113,17 @@ const Laberinto = ({ title }) => {
 
             if (laberinto[movimiento[0]][movimiento[1]] == ' ') {
                 sePuede = true;
+            }
+
+            if (laberinto[movimiento[0]][movimiento[1]] == 'g') {
+                sePuede = true;
+                setTimeout(() => {
+                    setmodal_final(true);
+                }, 500);
+            }
+
+            if (modal_final) {
+                sePuede = false;
             }
 
             // console.log(sePuede)
@@ -162,6 +179,7 @@ const Laberinto = ({ title }) => {
 
                 })}
             </div>
+            {modal_final && <Final cerrarModal={setmodal_final} />}
         </div>
     )
 }
