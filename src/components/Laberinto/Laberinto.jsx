@@ -12,7 +12,6 @@ const Laberinto = ({ title }) => {
     const [jugadorPos, setJugadorPos] = useState([1, 1]);
     const [tecla, setTecla] = useState('');
     const [movidas, setMovidas] = useState(0);
-    // const [sePuede, setSePuede] = useState(false);
 
     useEffect(() => {
         setTamano(size[0]);
@@ -107,10 +106,8 @@ const Laberinto = ({ title }) => {
             let sePuede = false;
 
             if (laberinto[movimiento[0]][movimiento[1]] == ' ') {
-
                 sePuede = true;
             }
-
 
             // console.log(sePuede)
             for (let i = 0; i < laberinto.length; i++) {
