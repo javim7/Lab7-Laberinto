@@ -89,8 +89,6 @@ const Laberinto = ({ title }) => {
 
             let movimiento = jugadorPos;
             let distancia = 1;
-            // console.log(movidas)
-            // console.log(tecla)
 
             switch (tecla) {
                 case "ArrowLeft":
