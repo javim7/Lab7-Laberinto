@@ -22,6 +22,7 @@ const App = () => {
                 src={music}
                 showSkipControls={false}
                 showJumpControls={false}
+
             />
             <Router>
                 <div className="container">
