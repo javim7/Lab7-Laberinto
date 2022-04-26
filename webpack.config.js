@@ -34,6 +34,14 @@ export default {
         {
             test: /\.mp3$/,
             use: 'file-loader',
+        },
+        {
+            test: /\.gif$/,
+            use: 'file-loader',
+        },
+        {
+            test: /\.svg$/,
+            use: 'file-loader'
         }]
     },
 };

@@ -28,7 +28,7 @@
 }
 
 #opcionCuadro:hover { 
-    transform: scale(1.08);
+    transform: scale(1.06);
     opacity: 1;
     border: 5px solid #b1a7a6;
 }

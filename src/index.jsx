@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import * as ReactDOMClient from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Laberinto from './components/Laberinto/Laberinto.jsx'
 import Inicio from './components/Inicio/Inicio.jsx'
@@ -20,8 +20,6 @@ const App = () => {
                 autoplay={true}
                 loop
                 src={music}
-                showSkipControls={false}
-                showJumpControls={false}
 
             />
             <Router>
@@ -36,10 +34,12 @@ const App = () => {
     )
 }
 
-const root = ReactDOMClient.createRoot(
-    document.getElementById('root'),
-);
+// const root = ReactDOMClient.createRoot(
+//     document.getElementById('root'),
+// );
 
-root.render(
-    <App />
-)
+// root.render(
+//     <App />
+// )
+
+ReactDOM.render(<App />, document.getElementById('root'))

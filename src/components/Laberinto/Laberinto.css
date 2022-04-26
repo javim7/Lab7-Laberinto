@@ -2,7 +2,7 @@
     position: relative;;
     display: block;
     width: 100%;
-    top: 150px;
+    top: 60px;
     justify-content: center;
     align-items: center;
 }
@@ -47,7 +47,7 @@
 .jugador {
     width: 30px;
     height: 40px;
-    background: #e5383b;
+    background: #d3d3d3;
 }
 
 .fin { 

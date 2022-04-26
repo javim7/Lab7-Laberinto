@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './Laberinto.css'
 import Final from '../Final/Final.jsx'
+import character from './character.svg'
 
 const Laberinto = ({ title }) => {
 
@@ -167,7 +168,9 @@ const Laberinto = ({ title }) => {
                                         return <div key={Math.random()} className="piso"></div>
                                     }
                                     else if (caracter == 'p') {
-                                        return <div key={Math.random()} className="jugador"></div>
+                                        return <div key={Math.random()} className="jugador">
+                                            <img src={character} className='jugador' />
+                                        </div>
                                     }
                                     else if (caracter == 'g') {
                                         return <div key={Math.random()} className="fin"></div>
