@@ -25,19 +25,19 @@ const Inicio = () => {
 
 
     return (
-        <div className="inicio">
-            <div className="texto">
-                <h1 id="titulo">Lab7: Laberinto</h1>
-                <h2 id="nombre">Javier Mombiela</h2>
-                <h1 id="elegir">Elige el tamano del laberinto</h1>
+        <div className='inicio'>
+            <div className='texto'>
+                <h1 id='titulo'>Lab7: Laberinto</h1>
+                <h2 id='nombre'>Javier Mombiela</h2>
+                <h1 id='elegir'>Elige el tamano del laberinto</h1>
             </div>
-            <div className="gridOpciones">
+            <div className='gridOpciones'>
                 {opciones.objects.map((objects, index) => {
                     return (
                         <div key={opciones.objects[index].id}>
                             {/* {console.log(opciones.objects[index].src)} */}
                             <h1>{opciones.objects[index].size}x{opciones.objects[index].size}</h1>
-                            <img onClick={() => { navigate(`/laberinto/${opciones.objects[index].size}x${opciones.objects[index].size}`) }} src={opciones.objects[index].src} id="opcionCuadro" />
+                            <img onClick={() => { navigate(`/laberinto/${opciones.objects[index].size}x${opciones.objects[index].size}`) }} src={opciones.objects[index].src} id='opcionCuadro' />
                         </div>
                     )
                 })}

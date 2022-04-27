@@ -43,10 +43,10 @@ const Laberinto = ({ title }) => {
         for (let i = 0; i < lab2.length; i++) {
 
             for (let j = 0; j < lab2[i].length; j++) {
-                if (lab2[i][j] == "p") {
+                if (lab2[i][j] == 'p') {
                     // console.log(lab2[i][j]);
-                    // console.log("Y", lab2.indexOf(lab2[i]))
-                    // console.log("X", lab2.indexOf(lab2[j]))
+                    // console.log('Y', lab2.indexOf(lab2[i]))
+                    // console.log('X', lab2.indexOf(lab2[j]))
                 }
             }
         }
@@ -55,27 +55,27 @@ const Laberinto = ({ title }) => {
 
     useEffect(() => {
 
-        document.addEventListener("keydown", (event) => {
+        document.addEventListener('keydown', (event) => {
             switch (event.key) {
-                case "a":
-                case "ArrowLeft":
-                    // console.log("izquierda")
-                    setTecla("ArrowLeft");
+                case 'a':
+                case 'ArrowLeft':
+                    // console.log('izquierda')
+                    setTecla('ArrowLeft');
                     setMovidas(prev => prev + 1)
                     break;
-                case "d":
-                case "ArrowRight":
-                    setTecla("ArrowRight");
+                case 'd':
+                case 'ArrowRight':
+                    setTecla('ArrowRight');
                     setMovidas(prev => prev + 1)
                     break;
-                case "s":
-                case "ArrowDown":
-                    setTecla("ArrowDown");
+                case 's':
+                case 'ArrowDown':
+                    setTecla('ArrowDown');
                     setMovidas(prev => prev + 1)
                     break;
-                case "w":
-                case "ArrowUp":
-                    setTecla("ArrowUp");
+                case 'w':
+                case 'ArrowUp':
+                    setTecla('ArrowUp');
                     setMovidas(prev => prev + 1)
                     break;
             }
@@ -91,18 +91,18 @@ const Laberinto = ({ title }) => {
             let distancia = 1;
 
             switch (tecla) {
-                case "ArrowLeft":
-                    // console.log("izquierda")
+                case 'ArrowLeft':
+                    // console.log('izquierda')
                     movimiento = [jugadorPos[0], jugadorPos[1] - distancia]
                     // console.log(movimiento)
                     break;
-                case "ArrowRight":
+                case 'ArrowRight':
                     movimiento = [jugadorPos[0], jugadorPos[1] + distancia]
                     break;
-                case "ArrowDown":
+                case 'ArrowDown':
                     movimiento = [jugadorPos[0] + distancia, jugadorPos[1]]
                     break;
-                case "ArrowUp":
+                case 'ArrowUp':
                     movimiento = [jugadorPos[0] - distancia, jugadorPos[1]]
                     break;
             }
@@ -144,34 +144,34 @@ const Laberinto = ({ title }) => {
     }, [movidas])
 
     return (
-        <div className="Laberinto">
-            <h1 className="titulo">LABERINTO</h1>
-            <h2 className="tamLab">{size}</h2>
-            <div className="board">
+        <div className='Laberinto'>
+            <h1 className='titulo'>LABERINTO</h1>
+            <h2 className='tamLab'>{size}</h2>
+            <div className='board'>
                 {laberinto.map(fila => {
                     return (
-                        <div className="gridFila" key={Math.random()}>
+                        <div className='gridFila' key={Math.random()}>
                             {
                                 fila.map(caracter => {
                                     if (caracter == '-') {
-                                        return <div key={Math.random()} className="pared"></div>
+                                        return <div key={Math.random()} className='pared'></div>
                                     }
                                     else if (caracter == '|') {
-                                        return <div key={Math.random()} className="pared"></div>
+                                        return <div key={Math.random()} className='pared'></div>
                                     }
                                     else if (caracter == '+') {
-                                        return <div key={Math.random()} className="pared"></div>
+                                        return <div key={Math.random()} className='pared'></div>
                                     }
                                     else if (caracter == ' ') {
-                                        return <div key={Math.random()} className="piso"></div>
+                                        return <div key={Math.random()} className='piso'></div>
                                     }
                                     else if (caracter == 'p') {
-                                        return <div key={Math.random()} className="jugador">
+                                        return <div key={Math.random()} className='jugador'>
                                             <img src={character} className='jugador' />
                                         </div>
                                     }
                                     else if (caracter == 'g') {
-                                        return <div key={Math.random()} className="fin"></div>
+                                        return <div key={Math.random()} className='fin'></div>
                                     }
                                 })
                             }

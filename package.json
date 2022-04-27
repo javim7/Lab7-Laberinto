@@ -2,12 +2,13 @@
   "name": "lab7-laberinto",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "type": "module",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src/**/*.jsx"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,12 @@
     "@babel/core": "^7.17.8",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.29.4",
     "style-loader": "^3.3.1"
   }
 }
