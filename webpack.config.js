@@ -13,6 +13,9 @@ export default {
         compress: true,
         port: 9000,
     },
+    resolve: {
+      extensions: ['.js','.jsx']
+    },
     module: {
         rules: [{
             test: /\.jsx?$/,
@@ -45,3 +48,7 @@ export default {
         }]
     },
 };
+
+module.exports = {
+      resolve: {extensions: ['.js','.jsx']}
+    }

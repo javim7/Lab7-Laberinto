@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+.botonOp{
+    border: none;
+}
+
 #elegir {
     position: relative;
     top: 50px;
