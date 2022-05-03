@@ -48,7 +48,3 @@ export default {
         }]
     },
 };
-
-module.exports = {
-      resolve: {extensions: ['.js','.jsx']}
-    }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './Laberinto.css'
-import Final from '../Final/Final.jsx'
+import Final from '../Final/Final'
 import character from './character.svg'
 
 function Laberinto() {
